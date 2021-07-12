@@ -6,9 +6,10 @@ Install
 -------
 Installation tutorial assumes you are using any of GNU/Linux distribution,
 and you are familiar with CLI.
+
+Clone repo:
 ```
-# clone repo
-$ git clone https://git.ivnglkv.ru/notifications-keeper.git
+$ git clone https://git.ivnglkv.ru/ivnglkv/notifications-keeper.git
 $ cd notifications-keeper
 ```
 
