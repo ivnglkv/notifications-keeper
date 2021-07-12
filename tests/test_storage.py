@@ -7,7 +7,7 @@ from flask import (
 from keeper.service.enums import (
     NotificationTypeEnum,
 )
-from keeper.service.writer import (
+from keeper.service.notification.writer import (
     CsvNotificationWriter,
 )
 

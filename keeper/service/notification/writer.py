@@ -4,7 +4,7 @@ from flask import (
     current_app,
 )
 
-from .lib import (
+from ..lib import (
     Singleton,
 )
 
