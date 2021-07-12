@@ -16,3 +16,8 @@ def app():
 
     os.close(output_fd)
     os.unlink(output_path)
+
+
+@pytest.fixture
+def client(app):
+    return app.test_client()

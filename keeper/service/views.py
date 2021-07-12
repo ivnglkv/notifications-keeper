@@ -31,4 +31,4 @@ def hook():
 
     status_code = Status.OK if is_valid else Status.SERVER_ERROR
 
-    return response, status_code
+    return response, status_code.value
