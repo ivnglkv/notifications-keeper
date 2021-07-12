@@ -10,11 +10,16 @@ from .lib import (
 
 
 class NotificationWriter:
+    """Basic class for implementing notification writers to different destinations"""
     def write(self, notification_data: dict):
         raise NotImplementedError
 
 
 class CsvNotificationWriter(NotificationWriter, Singleton):
+    """
+    Use this class to write notifications to csv-file
+    defined by application configuration variable `DST_FILE`
+    """
     fieldnames = [
         'id',
         'datetime',
@@ -31,6 +36,6 @@ class CsvNotificationWriter(NotificationWriter, Singleton):
     def __del__(self):
         self._output_file.close()
 
-    def write(self, notification_data):
+    def write(self, notification_data: dict) -> None:
         self._writer.writerow(notification_data)
         self._output_file.flush()

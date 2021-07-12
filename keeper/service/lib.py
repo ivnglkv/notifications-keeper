@@ -1,4 +1,8 @@
 class Singleton:
+    """
+    Basic singleton class.
+    Inherit from it to ensure your class will have only one instance at a time.
+    """
     _instances = {}
 
     @staticmethod
