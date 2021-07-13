@@ -23,7 +23,7 @@ $ . venv/bin/activate
 Install project, and it's dependencies to virtualenv:
 
 ```
-$ pip install '.' --use-feature=in-tree-build
+$ pip install '.'
 ```
 
 Copy configuration file:
@@ -74,7 +74,7 @@ Test
 ----
 
 ```
-$ pip install '.[test]' --use-feature=in-tree-build
+$ pip install '.[test]'
 $ pytest
 ```
 
