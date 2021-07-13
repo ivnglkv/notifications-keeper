@@ -29,7 +29,7 @@ $ pip install '.'
 Copy configuration file:
 
 ```
-$ cp hook.conf.example hook.conf
+$ cp conf/keeper.conf.example conf/keeper.conf
 ```
 
 Then edit hook.conf. It has only one variable, that contains path
@@ -40,10 +40,15 @@ Run
 ```
 $ export FLASK_APP=keeper
 $ export FLASK_ENV=development
+```
+This should be full path to real configuration file, you created
+on last installation step:
+```
+$ export HOOK_APP_CONFIG='/etc/keeper/keeper.conf'
 $ flask run
 ```
 
-Application will listen on `127.0.0.1:5000`.
+Application will start on `127.0.0.1:5000`.
 
 Endpoints
 ---------
