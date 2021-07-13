@@ -1,30 +1,33 @@
-Keeper
-======
+# Keeper
 The basic app, intended for storing notifications incoming from external system
 
-Install
--------
+## Install
+### Prerequisites
 Installation tutorial assumes you are using any of GNU/Linux distribution,
 and you are familiar with CLI.
 
-Clone repo:
+You should have installed git, python3 and optionally wget on your machine.
+
+#### Installation from git sources
 ```
 $ git clone https://git.ivnglkv.ru/ivnglkv/notifications-keeper.git
 $ cd notifications-keeper
-```
-
-Create a virtualenv and activate it:
-
-```
 $ python3 -m venv venv
 $ . venv/bin/activate
-```
-
-Install project, and it's dependencies to virtualenv:
-
-```
 $ pip install '.'
 ```
+
+#### Installation from wheel file
+```
+$ mkdir notifications-keeper
+$ cd notifications-keeper
+$ wget https://git.ivnglkv.ru/ivnglkv/notifications-keeper/releases/keeper-ivnglkv-0.1.whl
+$ python3 -m venv venv
+$ . venv/bin/activate
+$ pip install keeper-ivnglkv-0.1.whl
+```
+
+#### Common operations
 
 Copy configuration file:
 
@@ -32,11 +35,11 @@ Copy configuration file:
 $ cp conf/keeper.conf.example conf/keeper.conf
 ```
 
-Then edit hook.conf. It has only one variable, that contains path
-to target file, where program should write all incoming notifications
+Then edit `conf/keeper.conf`. It has only one variable, that contains path
+to target file, where program should write all incoming notifications.
+Just make sure, that your user have correct access write to desired destination.
 
-Run
----
+# Run
 ```
 $ export FLASK_APP=keeper
 $ export FLASK_ENV=development
@@ -50,16 +53,14 @@ $ flask run
 
 Application will start on `127.0.0.1:5000`.
 
-Endpoints
----------
+# Endpoints
 ```
 /service/hook -- open only for POST requests, responsible for
     processing incoming notifications data, validating, and saving it
     in the system
 ```
 
-Requests formats
-----------------
+# Requests formats
 `/service/hook` endpoint accepts data in following format
 ```
 {
@@ -75,8 +76,7 @@ where all fields are required,
  - `type` must be one of `"alert"`, `"error"`, `"warning"`, `"notice"`, `"info"` or `"debug"`;
  - `message` must be a string.
 
-Test
-----
+# Test
 
 ```
 $ pip install '.[test]'
