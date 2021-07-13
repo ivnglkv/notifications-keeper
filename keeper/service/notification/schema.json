@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "datetime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["alert", "error", "warning", "notice", "info", "debug"]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": ["id", "datetime", "type", "message"]
+}
