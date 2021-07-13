@@ -12,7 +12,7 @@ You should have installed git, python3 and optionally wget on your machine.
 ```
 $ git clone https://git.ivnglkv.ru/ivnglkv/notifications-keeper.git
 $ cd notifications-keeper
-$ git checkout v0.0.1
+$ git checkout v0.1
 $ python3 -m venv venv
 $ . venv/bin/activate
 $ pip install '.'
