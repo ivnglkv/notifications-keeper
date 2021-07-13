@@ -8,28 +8,17 @@ and you are familiar with CLI.
 
 You should have installed git, python3 and optionally wget on your machine.
 
-#### Installation from git sources
+#### Installation
 ```
 $ git clone https://git.ivnglkv.ru/ivnglkv/notifications-keeper.git
 $ cd notifications-keeper
+$ git checkout v0.0.1
 $ python3 -m venv venv
 $ . venv/bin/activate
 $ pip install '.'
 ```
 
-#### Installation from wheel file
-```
-$ mkdir notifications-keeper
-$ cd notifications-keeper
-$ wget https://git.ivnglkv.ru/ivnglkv/notifications-keeper/releases/keeper-ivnglkv-0.1.whl
-$ python3 -m venv venv
-$ . venv/bin/activate
-$ pip install keeper-ivnglkv-0.1.whl
-```
-
-#### Common operations
-
-Copy configuration file:
+Copy example configuration file:
 
 ```
 $ cp conf/keeper.conf.example conf/keeper.conf
